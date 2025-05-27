@@ -235,7 +235,9 @@ func (c *HTTPClient) parseRateLimitError(resp *http.Response, body []byte) error
 	}
 
 	// Parse response body
-	json.Unmarshal(body, &apiResponse)
+	if err := json.Unmarshal(body, &apiResponse); err != nil {
+		return NewNetworkError("Failed to parse rate limit response", "")
+	}
 
 	// Extract rate limit information from headers
 	retryAfter := 0
