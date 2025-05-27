@@ -21,5 +21,33 @@
 go.work
 go.work.sum
 
-# env file
+# Environment files
 .env
+.env.local
+.env.*.local
+
+# IDE files
+.vscode/
+.idea/
+*.sublime-project
+*.sublime-workspace
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+
+# Cache and temporary files
+.cache/
+.tmp/
+.temp/
+
+# Build artifacts
+build/
+dist/
+
+# Coverage reports
+coverage.html
+coverage.out
